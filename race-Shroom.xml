@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Shroomfolk</name>
+		<description></description>
+		<update version="0.1.6">
+			<file name="race-Shroomfolk.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/supplements/volos-guide-to-monsters/race-aasimar.xml" />
+		</update>
+	</info>
+  <element name="Shroomfolk" type="Race" source="Custom" id="ID_CUST_SHR">
+    <description>
+        <p class="flavor">"Frankly I despise them. They're nothing more than decomposers sucking out the magic from those around them."-An elven wizard later eaten by a giant Shroomfolk.</p>
+        <h4>Physical Description</h4>
+        <p>Shroomfolk are fungus-shaped creatures at home in an enchanted forest. They have a spongey body varying from milky white to dark brown. At smaller sizes, Shroomfolk may have basic little arms with small thumbs and stubby digits. They would also have almost no legs at this point, just having basic feet. However, with larger Shroomfolk, the body becomes more defined up until they reach a point where they grow so large that their bodies become that of a large orc's. If they go even further beyond, it eventually gets to a point where the body becomes unnaturally muscular and the moderate intelligence the Shroomfolk had turns to sudden madness at the craving for more magic. Note that if a Shroomfolk has its magic drained in some way, they shrink down and regress mentally.</p>
+        <h4>History</h4>
+        <p>After retiring from adventuring, Gemma Lifebloom, a revolutionary dwarf druid, found solace in extending her near limitless magic into the flora she grew around her, creating the first magical forests and subsequently the Shroomfolk. Gemma did not directly give fungi a stretch of her magical power, but rather they inherited it. As decomposers, fungi survive off of decomposing plants and animals, ingesting their nutrients, and in this case, even their magic. This infusion of magic into mushrooms empowers them to develop very basic limbs and facial features, granting them the ability to properly move from one place in the forest to another. This is when a mushroom first becomes Shroomfolk. All they want in this stage of their "aging" is to further ingest magic. After ingesting even more magic, the Shroomfolk grow in size to roughly 2 feet tall, gain a consciousness capable of learning at a similar rate to a young adult, and develop toes and thumbs. This is also when Shroomfolk develop an internal structure capable of eating regular food. Note that most Shroomfolk explore outside of the forest around this time and usually never return. However, it's not unheard of for a Shroomfolk to continue growing past this stage, often becoming giant fungal monstrosities with an endless hunger to consume all around them, particularly things infused with magic.</p>
+        <h4>Society</h4>
+        <p>Shroomfolk play a very strange role in a magical forest. Being mushrooms who suddenly have legs, they have the benefit of being able to choose where to root themselves and even have a proper digestive system for eating directly. They can either sit still and decompose things as they come or they can play the role as essentially magic vultures. More specifically, they hunt in packs and search for something dead or something magical. A couple of Shroomfolk could pick apart an entire deer in a few minutes, but they really love the taste of magic. Usually via proximity to magical weapons or wondrous items, they can grow even bigger and stronger. Some Shroomfolk can even cast spells, expelling the magic stored in them like wringing out a sponge. This is highly rare, however, as Shroomfolk usually would rather not spend away their life force to cast firebolt.</p>
+        <h4>Shroomfolk Traits</h4>
+        <p>Your Shroomfolk character has the following racial traits.<br />
+          <span class="feature">Ability Score Increase.</span>Your Dexterity and Constitution score each increase by 1.<br />
+          <span class="feature">Age.</span>Shroomfolk will wilt away after around a year without absorbing magic from another being but with enough magic could potentially grow and live forever.<br />
+          <span class="feature">Alignment.</span>Most adventurous Shroomfolk are Lawful Neutral, preferring to follow the rules of nature first and foremost, while other Shroomfolk are Chaotic Evil, preferring to fulfill their need to consume all magic over anything else.<br />
+          <span class="feature">Size.</span>Shroomfolk who become adventurers are generally at least 2 feet tall and around 20 pounds. Your size is Small. However, a shroomfolk who consumes magic and never dispenses it over a long period of time could grow to the size of an orc or larger. At DM discretion you can replace your size with Medium and change your base walking speed to 30 feet.<br />
+          <span class="feature">Speed.</span>Your base walking speed is 25 feet.<br />        
+          <span class="feature">Languages.</span>Shroomfolk don't have a specific language, but can fully understand the intent of any other Shroomfolk within 10 feet of themselves. You can also read, write, and speak Common.<br />      
+          <span class="feature">Subrace.</span>Three subraces of Shroomfolk exist: Penny Bun, Death Cap and Chanterelle. Choose one of them for your character.<br />
+        </p>        
+    </description>
+    <sheet display="false"/>
+    <rules>
+    <select type="Sub Race" name="Shroomfolk Sub Race" supports="Shroomfolk" />
+    </rules>
+    <setters>
+      <set name="names" type="male">Aseir, Bardeid, Haseid, Khemed, Mehmen, Sudeiman, Zasheir</set>
+      <set name="names" type="female">Atala, Ceidil, Hama, Jasmal, Meilil, Seipora, Yasheira, Zasheida</set>
+      <set name="names" type="surname">Basha, Dumein, Jassan, Khalid, Mostana, Pashar, Rein</set>
+      <set name="names-format">{{name}} {{surname}}</set>   
+      <set name="height" modifier="2d10">4'8"</set>
+      <set name="weight" modifier="2d4">110 lb.</set>   
+    </setters>
+    <rules>
+      <stat name="dexterity" value="1" />
+      <stat name="constitution" value= "1"/>
+      <stat name="innate speed" value="25" bonus="base" />
+      <grant type="Size" id="ID_SIZE_SMALL" />
+      <grant type="Language" id="ID_LANGUAGE_COMMON" />
+    </rules>
+  </element>
+
+  <element name="Death Cap" type="Sub Race" source="Custom" id="ID_CUST_SHR_DC">
+    <supports>Shroomfolk</supports>
+    <description>
+      <p>You are developed from a highly poisonous mushroom known as the death cap. Deception is natural as your cap and body are white and average proportion to most Shroomfolk. However, your deadliness is not to be underestimated.</p>
+      <p>
+        <span class="feature">Sickening Spores.</span>Your Spore Launch damage type is poison. If your target fails their Constitution save, the death cap growing on them gives them the poisoned condition until it is removed. The mushroom can be removed with a DC 10 Wisdom check or a DC 14 Strength check. This check requires an action and can be made by the affected target or by anyone within 5 feet of the target. This does not affect elementals or creatures with no clear physical form such as ghosts.<br />
+        <span class="feature">Poisonous Trickery.</span>Your terrible nature leads you to a path of particular skills. You are proficient in the Poisoner's Kit and Deception checks.<br />
+      </p>
+    </description>
+    <sheet display="false"/>
+  </element>
+
+  <element name="Chanterelle" type="Sub Race" source="Custom" id="ID_CUST_SHR_CHANT">
+    <supports>Shroomfolk</supports>
+    <description>
+      <p> Chanterelle Shroomfolk are most known for how delicious the mushroom they developed from is, but are generally more cheerful nonetheless. You have a funnel-shaped yellow cap and a skinny yellow body, almost resembling a daffodil more than a common mushroom.</p>
+      <p>     
+        <span class="feature">Gentle Spores.</span>Your Spore Launch damage type is radiant and your Spore Launch trait changes as follows: instead of taking 1d4 necrotic damage, you heal yourself for 1d4 hit points. However, on a successful save, the target takes no damage and takes only 1d6 damage on a failure.<br />
+        <span class="feature">Spread the Health.</span>Whenever you regain hit points, a creature of your choice within 10 feet of you which can see or hear you regains 1 Hit Point. This does include hit points healed from Spore Launch.<br />
+        <span class="feature">Fruity Smell.</span>You radiate a lovely smell within a 10 foot radius around yourself. All creatures other than yourself within this radius can add a +1 bonus to any death saving throws they make as long as you are not unconscious or incapacitated. This bonus does not apply to any creature without a sense of smell.<br />
+      </p>  
+    </description>
+    <sheet display="false"/>
+    <rules>
+
+    </rules>
+  </element>
+  
+  
+  <element name="Penny Bun" type="Sub Race" source="Custom" id="ID_CUST_SHR_PB">
+    <supports>Shroomfolk</supports>
+    <description>
+      <p>You are a developed form of a penny bun mushroom. You have a hard, flattened brown cap which you could use as a flat surface similar to a table. The rest of your body is an off-white spongy substance.</p>
+      <p>     
+        <span class="feature">Tearing Spores</span>Your Spore Launch damage type is force<br />
+        <span class="feature">Stepping Stool.</span>Your head is such a strong surface that someone could comfortably stand on top of you. Creatures of size medium or smaller can stand on top of your head, treating it like an empty space. If you move while a creature is on top of you, they will stay on top of your head. If you or the creature are knocked prone, you are both knocked prone and the creature on top lands on another space within 5 feet of you. You can only benefit from this ability while standing up.<br />
+      </p>
+    </description>
+    <sheet display="false"/>
+   
+  </element>
+  <element name="Stepping Stool" type="Racial Trait" source="Custom" id="ID_CUST_SHR_PB_STST">
+    <description>
+      <p>Your head is such a strong surface that someone could comfortably stand on top of you. Creatures of size medium or smaller can stand on top of your head, treating it like an empty space. If you move while a creature is on top of you, they will stay on top of your head. If you or the creature are knocked prone, you are both knocked prone and the creature on top lands on another space within 5 feet of you. You can only benefit from this ability while standing up.</p>
+    </description>
+    <sheet usage="1/Long Rest">
+      <description>The instant you transform, other creatures within 10 feet of you that can see you must each succeed on a Charisma saving throw (DC {{necrotic shroud:dc}}) or become frightened of you until the end of your next turn. Your transformation lasts for 1 minute or until you end it as a bonus action. During it, once on each of your turns, you can deal {{level}} extra necrotic damage to one target when you deal damage to it with an attack or a spell.</description>
+    </sheet>
+    <rules>
+		<stat name="necrotic shroud:dc" value="8" />
+		<stat name="necrotic shroud:dc" value="proficiency" />
+		<stat name="necrotic shroud:dc" value="charisma:modifier" />
+	</rules>
+  </element>
+  
+</elements>
